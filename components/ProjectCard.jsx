@@ -7,11 +7,11 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl }) => {
     <div>
       <Link href={gitUrl} onClick={(e) => e.preventDefault()}>
         <Image
+          alt="A screenshot of the ${title} project."
           className="h-52 md:h-72 relative group"
           style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
-          
           onClick={() => window.open(gitUrl, "_blank")}
-          zIndex={1} // Added this line
+          zIndex={1}
         />
       </Link>
 

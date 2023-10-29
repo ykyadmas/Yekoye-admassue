@@ -39,7 +39,7 @@ const projectsData = [
     title: "Personal Portifolio",
     description: "Personal Portifolio",
     image: "/personal.png",
-    gitUrl: "https://yekoye-portifolio-yawq.vercel.app/",
+    gitUrl: "https://yekoye-portifolio.vercel.app/",
   
   },
  
@@ -58,6 +58,7 @@ const Projects = () => {
          
             <ProjectCard
               key={project.id}
+              title={project.title}
               description={project.description}
               imgUrl={project.image}
               gitUrl={project.gitUrl}

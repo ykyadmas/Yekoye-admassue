@@ -7,7 +7,7 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl }) => {
     <div>
       <Link href={gitUrl} onClick={(e) => e.preventDefault()}>
         <Image
-          
+          alt="ab"
           className="h-52 md:h-72 relative group"
           style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
           onClick={() => window.open(gitUrl, "_blank")}

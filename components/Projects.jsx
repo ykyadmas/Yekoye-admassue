@@ -34,7 +34,14 @@ const projectsData = [
     gitUrl: "https://github.com/ykyadmas/Product-management-system.git",
   
   },
+  {
+    id: 5,
+    title: "Personal Portifolio",
+    description: "Personal Portifolio",
+    image: "/personal.png",
+    gitUrl: "https://yekoye-portifolio-yawq.vercel.app/",
   
+  },
  
 ];
 
@@ -51,7 +58,6 @@ const Projects = () => {
          
             <ProjectCard
               key={project.id}
-              title={project.title}
               description={project.description}
               imgUrl={project.image}
               gitUrl={project.gitUrl}

@@ -1,9 +1,28 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
+import Education from './Education';
+import Skill from './Skill';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import classNames from 'classnames';
 
+const links=[
+
+  {
+    name:"Skills",
+    link:<Skill />
+  },
+  {
+    name:"Education",
+    link:<Education />
+  },
+  
+]
 
 const About =()=>{
 
+  const currentPath=usePathname();
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
@@ -20,28 +39,25 @@ const About =()=>{
           <div className="flex flex-row justify-start mt-8">
           
        <div  className='flex gap-16'>
-      <div>
-    <h1 className='font-bold text-2xl text-[#380e0e] text-center border-b border-pink-800'>Skills</h1>
-   <ul className="list-disc pl-2 mt-8">
-     <li>HTML</li>
-     <li>Tailwind CSS</li>
-     <li>SQL</li>
-     <li>JavaScript</li>
-     <li>React</li>
-     <li>Nextjs</li>
-     <li>Wordpress</li>
-   </ul>
-        </div>
+   
+   {/* <Skill />
   
-  
-
-    <div>
-    <h1 className='font-bold text-2xl text-center text-[#380e0e] border-b border-pink-800'>Education</h1>
-      <ul className="list-disc pl-2 mt-8">
-        <li>Information Ststem</li>
-        <li>Addis Ababa University ,Ethiopia</li>
-      </ul>
-    </div>
+ <Education /> */}
+ 
+ {
+    links.map((links)=>(
+          <div
+          className={classNames({
+          "bg-gray-700 px-3 rounded-full text-white":links.path===currentPath,
+          "white":links.path !==currentPath,
+          })}
+           href={links.link} 
+           key={links.name}>
+            {links.link}
+            </div>
+        ))
+      }
+   
        </div>
           </div>
         
